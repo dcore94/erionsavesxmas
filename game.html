@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <script src="js/model.js"></script>
+    <script src="js/geometry.js"></script>
+    <script src="js/sprite.js"></script>
+    <script src="js/floor.js"></script>
+    <script src="js/bonus.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/editor.js"></script>
+    <style>
+      body{
+        display:flex; 
+        background-color: #666666;
+        font-family: 'Segoe UI','Segoe UI Web Regular','Segoe UI Symbol','Helvetica Neue','BBAlpha Sans','S60 Sans',Arial,'sans-serif'
+      }
+      button{
+        background:none;
+        border-radius: 10px; 
+        width: 100px; 
+        color: lightgreen; 
+        background-color: darkgreen;
+        font-size: 3em;
+        margin: 3px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      span{
+        font-size:1.8em;
+        font-weight: bold;
+        color: lightblue; 
+        text-shadow: 1px 1px 1px black;
+      }
+      span#timer:before{
+        content: "\231b\ ";
+      }
+      span#bonus:before{
+        content: "\1f4e6\ ";
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display:flex;width:100%" id="titlescreen" onclick="start()">
+      <div style="width:640px;height:480px;max-height:480px;margin:auto">
+        <img src="resources/titlescreen.png"/>
+        <span style="font-size:0.6em;">(C) By DcorE 2016</span>
+      </div>
+    </div>
+
+    <div id="gamescreen" style="width:640px;height:480px;max-height:480px;margin:auto; display: none; flex-direction: column;">
+      <div style="width:640px;height:400px;max-height:400px;">
+        <svg id="GAME" width="640" height="400">
+          <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#4444ff"/>
+            <stop offset="100%" stop-color="lightblue"/>
+          </linearGradient>
+          <radialGradient id="ice" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:rgb(100,200,255); stop-opacity:0" />
+            <stop offset="100%" style="stop-color:rgb(10,100,255);stop-opacity:1" />
+          </radialGradient>
+          <svg id="BACKGROUND">
+            <!-- image x="0" y="0" width="" height="" xlink:href="" /-->
+            <rect x="0" y="0" width="" height="" fill="url(#sky)"></rect>
+          </svg>
+          <text id="successmessage" text-anchor="middle" id="finalmessage1" fill="none" style="text-shadow: 3px 3px black">
+            <tspan x="320" y="100" style="font-size:4em">CONGRATS!</tspan>
+            <tspan x="320" y="130" style="font-size:2em">You helped Erion in saving the Xmas!</tspan>
+          </text>
+          <text id="failuremessage" text-anchor="middle" id="finalmessage1" fill="none" style="text-shadow: 3px 3px black">
+            <tspan x="320" y="100" style="font-size:4em">OH NO!</tspan>
+            <tspan x="320" y="130" style="font-size:2em">You haven't succeded! Try again ...</tspan>
+          </text>
+        </svg>
+      </div>
+      <div style="width:640px;height:80px;max-height:80px;display:flex;justify-content: space-between;">
+        <div>
+          <button id="left">&#8678;</button>
+          <button id="jump1">&#8679;</button>
+        </div>
+          <span id="bonus">0</span>
+          <span id="timer">100</span>
+        <div>
+          <button id="jump2">&#8679;</button>
+          <button id="right">&#8680;</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      init()
+    </script>
+  </body>
+</html>
