@@ -410,7 +410,7 @@ GAME_MODEL = {
   
   enemies : {
     cannon : {
-      positions: [{x:1200, y:70, orientation: 'left'}],
+      positions: [{"x":1200,"y":70,"orientation":"left"},{"x":2650,"y":90,"orientation":"left"},{"x":3600,"y":100,"orientation":"right"},{"x":5280,"y":100,"orientation":"right"},{"x":6700,"y":100,"orientation":"left"},{"x":7390,"y":80,"orientation":"right"},{"x":8700,"y":80,"orientation":"left"},{"x":9620,"y":200,"orientation":"left"},{"x":12600,"y":40,"orientation":"left"}],
       animations : {
         "idleleft" : { 
           image : "resources/spritesheet/cannonleft.png", play: "loop", width : 128, height: 128,
@@ -484,7 +484,7 @@ GAME_MODEL = {
     },
     
     snowman : {
-      positions: [{x:400, y:40, orientation: "left"}],
+      positions: [{"x":400,"y":40},{"x":2050,"y":40,"limit":100},{"x":2950,"y":220,"limit":100},{"x":3400,"y":80,"limit":60},{"x":4870,"y":140,"limit":40},{"x":5820,"y":90,"limit":60},{"x":6000,"y":90,"limit":60},{"x":7100,"y":40,"limit":100},{"x":8200,"y":160,"limit":60},{"x":8930,"y":120,"limit":100},{"x":9950,"y":140,"limit":50},{"x":12300,"y":40,"limit":100},{"x":12500,"y":40,"limit":100}],
       animations : {
         "idleleft" : { 
           image : "resources/spritesheet/snowmanleft.png", play: "loop", width : 128, height: 128,
@@ -610,7 +610,7 @@ GAME_MODEL = {
   
   bonuses : {
     "parcel" : {
-      positions : [ {x:600,y:40}, {x:1000,y:40} ],
+      positions : [{"x":600,"y":40},{"x":1000,"y":40},{"x":1450,"y":140},{"x":1550,"y":180},{"x":1650,"y":160},{"x":1750,"y":140},{"x":2290,"y":40},{"x":2900,"y":40},{"x":3000,"y":40},{"x":3650,"y":120},{"x":3900,"y":200},{"x":4000,"y":220},{"x":4100,"y":200},{"x":4610,"y":40},{"x":5050,"y":40},{"x":5450,"y":40},{"x":6400,"y":190},{"x":6300,"y":170},{"x":6200,"y":150},{"x":6900,"y":90},{"x":7000,"y":90},{"x":7100,"y":120},{"x":7700,"y":120},{"x":7900,"y":140},{"x":8000,"y":180},{"x":8260,"y":160},{"x":8400,"y":130},{"x":8500,"y":100},{"x":9000,"y":120},{"x":9120,"y":150},{"x":9240,"y":50},{"x":9360,"y":200},{"x":9620,"y":40},{"x":9500,"y":40},{"x":9900,"y":140},{"x":10100,"y":140},{"x":10200,"y":40},{"x":10300,"y":60},{"x":10400,"y":90},{"x":10500,"y":120},{"x":10800,"y":180},{"x":10900,"y":190},{"x":10800,"y":180},{"x":11000,"y":200},{"x":11150,"y":210},{"x":11300,"y":240},{"x":11550,"y":240},{"x":11650,"y":270},{"x":11750,"y":240},{"x":12150,"y":170},{"x":12300,"y":100},{"x":12400,"y":40}],
       animations : {
         "idle" : { 
           "image" : "resources/spritesheet/parcel.png", 

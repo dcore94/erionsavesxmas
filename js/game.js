@@ -51,11 +51,14 @@ function init(){
     b.addEventListener('touchstart', mousedownEvents)
     b.addEventListener('touchend', mouseupEvents)
   })
+  
+  document.querySelector("#titlescreen").addEventListener("click", (ev)=>{start()})
  
-  TIME = -100
+  TIME = 100
   TIMER = document.querySelector("span#timer")
   
   COLLECTED = 0
+  RESULT = BONUSES.length
   BONUS_DISPLAY = document.querySelector("span#bonus")
 
   document.querySelector("text#successmessage").setAttribute("fill", "none")
@@ -114,7 +117,7 @@ function CollisionDetector(){
         if(b.isVisible(CAMERA) && !b.collected){
           var bonusbb = computeBB(b)
           var colltype = checkCollision(objbb, bonusbb)
-          if(colltype >= 64){
+          if((colltype === 6) || (colltype === 10) || (colltype === 20) || (colltype === 24) || (colltype === 16) || (colltype === 32) || colltype >= 64){
             COLLECTED += 1
             b.dead = true
             b.setAnimation(null)
@@ -283,7 +286,7 @@ function mainLoop(){
   RENDERING_OBJECTS = RENDERING_OBJECTS.filter((o)=>{ return !o.dead })
   ENEMIES = ENEMIES.filter((o)=>{ return !o.dead})
   update();
-  if(COLLECTED === 20){
+  if(COLLECTED === BONUSES.length){
     success()
   } else if( HERO.dead || TIME === 0){
     fail()

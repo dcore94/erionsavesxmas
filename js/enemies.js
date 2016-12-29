@@ -103,7 +103,7 @@ function initEnemies(enemies){
           enemy = new Cannon({ position: pos, animations : e.animations, orientation : pos.orientation === "left" ? -1 : 1})
           enemy.setAnimation(pos.orientation === "left" ? "idleleft" : "idleright")
         }else if(k === "snowman"){
-          enemy = new Snowman({ position: pos, animations : e.animations})
+          enemy = new Snowman({ position: pos, animations : e.animations, limit : pos.limit})
           enemy.setAnimation("idleleft")
           
         }
